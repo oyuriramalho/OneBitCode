@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercícios de formulário</title>
+  </head>
+  <body>
+    <h1>Cadastro - Liga dos Astronautas</h1>
+    <form action="https://www.google.com/search">
+      <label for="name">Nome:</label>
+      <div>
+        <input type="text" name="q" placeholder="Nome completo" required />
+        <br />
+        <label for="email">Email :</label>
+        <input type="email" name="email" placeholder="Seu email" required />
+
+        <label for="password"> - Senha:</label>
+        <input type="password" name="password" placeholder="Senha" required />
+        <br /><br />
+      </div>
+      <!-- Name, email and password  -->
+      <div>
+        <label for="born">Data de nascimento</label>
+        <input type="date" name="born" required />
+        <label for="profile"> - Foto: </label>
+        <input type="file" name="profile" required />
+      </div>
+      <!-- Born and profile img -->
+      <br />
+
+      <div>
+        <label for="country">Nacionalidade :</label>
+        <input list="country" />
+        <datalist id="country">
+          <option value="Brasil"></option>
+          <option value="Estado Unidos"></option>
+          <option value="Rússia"></option>
+          <option value="Inglaterra"></option>
+        </datalist>
+
+        <label for="gender"> - Sexo: </label>
+        <input type="radio" name="gender" id="M" value="Male" />
+        <label for="m">Homem </label>
+
+        <input type="radio" name="gender" id="f" value="Female" />
+        <label for="f">Mulher </label>
+        <br />
+        <p>Suas principais qualidades:</p>
+
+        <input type="checkbox" id="att01" name="int" value="intelligence" />
+        <label for="att01">Inteligência</label>
+
+        <input type="checkbox" id="att02" name="res" value="resiliency" />
+        <label for="att02">Resiliência</label>
+
+        <input type="checkbox" id="att03" name="fis" value="athletic" />
+        <label for="att03">Preparo físico</label>
+
+        <input type="checkbox" id="att04" name="edu" value="education" />
+        <label for="att04">Educação</label>
+      </div>
+      <!-- Nation, gender and skills -->
+      <br />
+      <div>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+          placeholder="Por que você quer se tornar astronauta ?"
+        ></textarea>
+      </div>
+      <!-- Question -->
+      <br /><br /><br />
+      <input type="submit" value="Enviar" />
+      <br />
+    </form>
+    <a
+      href="https://www.w3schools.com/html/html_form_attributes.asp"
+      target="_blank"
+      >Referência W3School</a
+    >
+    <!-- Referência W3School -->
+    <br />
+    <!-- Link para aula do curso
+      <a href="https://fullstack.club.hotmart.com/t/page/zK4krPPoOY?keep_watching=true">Link da aula do curso </a> 
+    -->
+  </body>
+</html>

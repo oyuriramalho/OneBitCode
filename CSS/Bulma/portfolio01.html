@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="portfolio01.css" />
+    <!-- Font Awesome at https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css"
+      integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Yuri's Contact with Bulma</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="portfolio01.html">
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              width="112"
+              height="28"
+            />
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu is-active">
+          <div class="navbar-start">
+            <a class="navbar-item" href="portfolio01.html"> Home </a>
+            <a class="navbar-item" href="contato.html"> Contact </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- With navbar-->
+    <div class="columns section">
+      <div class="column" id="PersonalDataContainer">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img
+                src="https://bulma.io/images/placeholders/1280x960.png"
+                alt="Placeholder image"
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <!--               <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    src="https://bulma.io/images/placeholders/96x96.png"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div> -->
+              <div class="media-content">
+                <p class="title is-4"><strong>Yuri Ramalho</strong></p>
+                <!-- <p class="subtitle is-6">@johnsmith</p> -->
+                <p>
+                  <spam class="tag is-dark">
+                    Javascript Full Stack Developer
+                  </spam>
+                </p>
+              </div>
+            </div>
+            <div class="content">
+              <p>(21) 99767-6796</p>
+              <p>mail@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-9" id="ContentPerPage">
+        <!-- ==================== AboutMe ==================== -->
+        <div class="card" id="AboutMe">
+          <header class="card-header">
+            <p class="card-header-title">Sobre mim</p>
+          </header>
+          <div class="card-content content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta hic
+            asperiores quidem quia saepe, voluptates vero mollitia? Eaque
+            accusamus quam, nisi repudiandae vitae consequatur ipsam
+            reprehenderit non. Aperiam, blanditiis unde.
+          </div>
+        </div>
+        <br />
+        <!-- ==================== Work Experiences ==================== -->
+        <div class="card" id="card-Experiences">
+          <p class="card-header card-header-title">Experiências</p>
+          <div id="Company-01">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-128x128">
+                    <img
+                      class="is-rounded"
+                      src="https://bulma.io/images/placeholders/128x128.png"
+                      alt="Logo da empresa 01"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p>
+                    <strong>Empresa 01</strong>
+                    <spam class="tag is-dark">Front-end Dev with React</spam>
+                    <br /><br />
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Deleniti, odit nihil ab, nostrum, maiores dolore ipsum nisi
+                    quod facere quo dolor nobis consectetur quisquam repellat
+                    quos illum! Quis, atque doloremque!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div id="Company-02">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-128x128">
+                    <img
+                      class="is-rounded"
+                      src="https://bulma.io/images/placeholders/128x128.png"
+                      alt="Logo da empresa 01"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p>
+                    <strong>Empresa 02</strong>
+                    <spam class="tag is-dark"
+                      >Back-end Dev with Nest, docker and gRPC</spam
+                    >
+                    <br /><br />
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Deleniti, odit nihil ab, nostrum, maiores dolore ipsum nisi
+                    quod facere quo dolor nobis consectetur quisquam repellat
+                    quos illum! Quis, atque doloremque!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="card" id="card-Courses">
+          <p class="card-header card-header-title">Formação</p>
+          <div class="card-content">
+            <p>
+              <strong>One-Bit-Code - Javascript Full Stack Developer</strong>
+            </p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
+              recusandae numquam perspiciatis veritatis iste nam dolorem laborum
+              id ullam. Tenetur nihil possimus voluptatum esse fugiat
+              exercitationem maiores. Dignissimos, cumque ducimus?
+            </p>
+            <hr />
+            <p><strong>Rocket Seat - UI/UX with Figma and React</strong></p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Accusantium totam, aspernatur, temporibus debitis voluptate
+              assumenda blanditiis amet ad sint officia, harum alias et autem
+              facere cumque laborum. Sequi, ipsam similique.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceX - OneBitCode</title>
+  </head>
+  <body>
+    <!-- Falta corrigir a logo -->
+    <header>
+      <nav>
+        <a href="spacex.html">
+          <img src="./images/logo.png" alt="Spacex's logo" />
+        </a>
+        <a href="spaceships.html"> The Spaceships </a>
+        <a href="hireus.html">| Hire us</a>
+      </nav>
+      <hr />
+    </header>
+
+    <section>
+      <h2>Hire Us Now</h2>
+      <p>
+        Leave a message to request one of our servicesand we will return you as
+        soon as possible.
+      </p>
+
+      <form action="">
+        <label for="Name">Name :</label>
+        <input type="text" id="name" placeholder="Complete name" required />
+
+        <label for="email"> - Email :</label>
+        <input type="email" id="email" required /> <br /><br />
+
+        <label for="spaceship">Spaceship:</label>
+        <select name="sapcechip" id="spaceship">
+          <option value="" selected></option>
+          <option value="Falcon9">Falcon 9</option>
+          <option value="FalconHeavy">Falcon Heavy</option>
+        </select>
+        <label for="service"> - Type of service :</label>
+        <input list="services" />
+        <datalist id="services">
+          <option value="lorem">Lorem ipsum dolor sit amet</option>
+          <option value="imperdiet">
+            Ut imperdiet ipsum a tortor molestie cursus
+          </option>
+          <option value="aenean">
+            Aenean in nunc eu augue iaculis sollicitudin
+          </option>
+          <option value="fusce">Fusce tempus odio tellus</option>
+        </datalist>
+        <br /><br />
+        <input type="submit" value="Send message" />
+      </form>
+    </section>
+  </body>
+</html>
