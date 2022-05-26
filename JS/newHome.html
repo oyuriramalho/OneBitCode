@@ -12,19 +12,39 @@
     <div>
       <h2>Nova casa :</h2>
       <form>
-        <label for="newHomeNumber">Número da casa :</label>
-        <input type="text" id="newHomeNumber" name="newHomeNumber" />
-        <label for="newHomeNeightborhood">Bairro :</label>
-        <input
-          type="text"
-          id="newHomeNeightborhood"
-          name="newHomeNeightborhood"
-        />
-        <label for="NewHomeCity">Cidade :</label>
-        <input type="text" id="newHomeCity" name="newHomeCity" />
-        <label for="NewHomeArea">Área :</label>
-        <input type="text" id="newHomeArea" name="newHomeArea" />
-        <button type="button" onclick="addNewHouse()">Cadastrar</button>
+        <table>
+          <tr>
+            <td>
+              <label for="newHomeNumber">Número da casa :</label>
+              <input type="text" id="newHomeNumber" name="newHomeNumber" />
+            </td>
+            <td>
+              <label for="newHomeNeightborhood">Bairro :</label>
+              <input
+                type="text"
+                id="newHomeNeightborhood"
+                name="newHomeNeightborhood"
+              />
+            </td>
+            <td>
+              <label for="NewHomeCity">Cidade :</label>
+              <input type="text" id="newHomeCity" name="newHomeCity" />
+            </td>
+            <td>
+              <label for="NewHomeArea">Área (m²):</label>
+              <input type="text" id="newHomeArea" name="newHomeArea" />
+            </td>
+            <td>
+              <button
+                type="button"
+                onclick="inGaia.addNewHouse(this)"
+                id="newHouseRegisterButton"
+              >
+                Cadastrar
+              </button>
+            </td>
+          </tr>
+        </table>
       </form>
     </div>
 
@@ -37,11 +57,21 @@
             <td>Número</td>
             <td>Bairro</td>
             <td>Cidade</td>
-            <td>Área</td>
+            <td>Área (m²)</td>
             <td></td>
           </tr>
         </thead>
-        <tbody id="tableItems"></tbody>
+        <tbody id="tableItems">
+          <!-- <tr>
+          <td>aaaa</td>
+          <td>bbbb</td>
+          <td>cccc</td>
+          <td>dddd</td>
+          <td>
+            <button type="button" onclick="removeLine(this)" id="theButton">Deletar</button>
+          </td>
+        </tr> -->
+        </tbody>
       </table>
     </div>
   </body>
