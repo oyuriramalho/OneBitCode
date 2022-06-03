@@ -1,6 +1,6 @@
 class inGaia {
-  static addNewHouse(X) {
-    let element = X.parentElement.getElementsByTagName('input')
+  static addNewHouse() {
+    let element = document.getElementsByTagName('input')
     let line = document.createElement('tr')
     for (let i = 0; i <= element.length - 1; i++) {
       let item = document.createElement('td')
