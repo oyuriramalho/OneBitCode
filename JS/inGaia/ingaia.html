@@ -7,7 +7,7 @@
     <title>InGaia Paraguaio</title>
     <script src="./equities.js"></script>
   </head>
-  <body>
+  <body style="background-color: hsl(152, 69%, 19%)">
     <h1>Casas para alugar ou vender</h1>
     <div>
       <h2>Nova casa :</h2>
@@ -16,19 +16,44 @@
           <label for="kind">Tipo :</label>
           <select name="kind" id="kind">
             <option value="notSelected"></option>
-            <option value="house">Casas</option>
-            /on>
+            <option value="house">Casa</option>
             <option value="appartment">Apartmento</option>
           </select>
         </p>
-
+        <p>
+          <label for="area">Área (m²) :</label>
+          <input type="text" name="area" id="area" />
+        </p>
         <p>
           <label for="avaiability">Disponibilidade :</label>
-          <input type="radio" value="Rented" />Alugada>
-          <input type="radio" value="AvaiableForRent" />Disponível para Aluguel>
-          <input type="radio" value="AvaiableForSell" />Disponível para venda>
+          <input name="avaiability" type="radio" value="Rented" />Alugada
+          <input
+            name="avaiability"
+            type="radio"
+            value="AvaiableForRent"
+          />Disponível para Aluguel
+          <input
+            name="avaiability"
+            type="radio"
+            value="AvaiableForSell"
+          />Disponível para venda
+        </p>
+
+        <p>
+          <button type="button" onclick="Equities.register()">Cadastrar</button>
         </p>
       </form>
+    </div>
+    <div>
+      <table>
+        <thead>
+          <td>Tipo</td>
+          <td>Área (m²)</td>
+          <td>Disponibilidade</td>
+          <td></td>
+        </thead>
+        <tbody id="tableHouses"></tbody>
+      </table>
     </div>
   </body>
 </html>
