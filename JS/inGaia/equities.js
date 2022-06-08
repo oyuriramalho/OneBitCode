@@ -12,9 +12,9 @@ class Equities {
     areaCell.innerText = document.getElementById('area').value
 
     let avaiabilityCell = document.createElement('td')
-    avaiabilityCell.innerText = document.querySelector(
+    avaiabilityCell.innerText = Equities.avaiabilityText(document.querySelector(
       "input[name='avaiability']:checked"
-    ).value
+    ).value)
 
     let removeHouseButtonCell = document.createElement('td')
     let removeHouseButton = document.createElement('button')
@@ -28,9 +28,9 @@ class Equities {
     newHouse.appendChild(areaCell)
     newHouse.appendChild(avaiabilityCell)
     newHouse.appendChild(removeHouseButtonCell)
-    XPTO = newHouse
 
-    document.getElementById("tableHouses").appendChild(newHouse)
+    document.getElementById('tableHouses').appendChild(newHouse)
+    Equities.clearFields()
   }
 
   static removeHouse(element) {
@@ -38,13 +38,20 @@ class Equities {
       element.parentNode.parentNode
     )
   }
-  /*   static avaiabilityText(avaiableFor){
-    let X = ["Rented", "AvaiableForRent", "AvaiableForSell"]
-    let Y = ["Alugado", "Disponível para Alugar", "Disponível para Venda"]
-    for (let i =0; X.lenght-1; i++){
-      if (avaiableFor == X[i]){
+  static avaiabilityText(avaiableFor) {
+    console.log(avaiableFor)
+    let X = ['Rented', 'AvaiableForRent', 'AvaiableForSell']
+    let Y = ['Alugado', 'Disponível para Alugar', 'Disponível para Venda']
+    for (let i = 0; i < X.length; i++) {
+      
+      if(avaiableFor == X[i]){
         return Y[i]
       }
     }
-  } */
+  }
+  static clearFields() {
+    document.getElementById('kind').value = 'notSelected'
+    document.getElementById('area').value = ''
+    document.querySelector("input[name='avaiability']:checked").checked = false
+  }
 }
