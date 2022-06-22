@@ -8,9 +8,12 @@
     },
     {
       "path": "HTML"
+    },
+    {
+      "path": "React"
     }
   ],
   "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "JS"
+    "liveServer.settings.multiRootWorkspaceName": "React"
   }
 }
