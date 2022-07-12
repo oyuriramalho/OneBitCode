@@ -1,0 +1,6 @@
+.planet-img{
+  --tam : 25%;
+  height: var(--tam);
+  width: var(--tam);
+  filter: grayscale(100%)
+}
