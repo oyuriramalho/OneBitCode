@@ -1,5 +1,14 @@
-.planet-img{
+:root {
   --tam : 25%;
+}
+
+.grey-img{
+  height: var(--tam);
+  width: var(--tam);
+  filter: invert(100%)
+}
+
+.inv-img{
   height: var(--tam);
   width: var(--tam);
   filter: grayscale(100%)
