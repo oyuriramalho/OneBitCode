@@ -3,7 +3,7 @@ import './planet.css'
 
 const Planet = props => {
   return (
-    <div onClick={() => props.theClick(props.name)}>
+    <div onClick={() => props.theClick}>
       <h2>{props.name}</h2>
       <p>{props.description}</p>
       <p>

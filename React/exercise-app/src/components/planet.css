@@ -4,8 +4,7 @@
 
 .grey-img{
   height: var(--tam);
-  width: var(--tam);
-  filter: invert(100%)
+  width: var(--tam)
 }
 
 .inv-img{
