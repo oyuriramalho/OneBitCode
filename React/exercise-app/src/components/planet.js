@@ -14,7 +14,7 @@ const Planet = props => {
       <img
         src={props.planetImg}
         alt={props.name}
-        className={props.grey ? 'grey-img' : 'inv-img'}
+        className={props.grey ? 'grey-img' : 'norm-img'}
       ></img>
       <br />
     </div>
