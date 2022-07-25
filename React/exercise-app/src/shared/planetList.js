@@ -38,6 +38,7 @@ class PlanetList extends React.Component {
             links={planet.links}
             theClick={() => clickOnPlanet(planet.name)}
             grey={false}
+            satellitesUrl={planet.satellitesUrl}
           />
         ))}
       </Fragment>
