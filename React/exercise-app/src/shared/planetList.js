@@ -30,7 +30,7 @@ class PlanetList extends React.Component {
       <Fragment>
         <h1>Planet List</h1>
         <hr />
-        {this.state.planets.map(planet => (
+        {this.state.planets.map((planet,index) => (
           <Planet
             name={planet.name}
             description={planet.description}
@@ -39,6 +39,7 @@ class PlanetList extends React.Component {
             theClick={() => clickOnPlanet(planet.name)}
             grey={false}
             satellitesUrl={planet.satellitesUrl}
+            key={index}
           />
         ))}
       </Fragment>

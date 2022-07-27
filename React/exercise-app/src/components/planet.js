@@ -18,30 +18,32 @@ class Planet extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.satellitesUrl !== null) {
+    if (
+      this.state['satellites'].length === 0 &&
+      this.props.satellitesUrl !== null
+    ) {
       getSatellites(this.props.satellitesUrl).then(data => {
         this.setState({ satellites: data.satellites })
+        // console.log(`${this.state.satellites.length} satélites no planeta ${this.props.name}`)
       })
-      let satelliteList = this.state.satellites.map(n =>(
-        <li>{n.name}</li>
-      ))
     }
   }
 
   render() {
-    let satellites
-
+    let ListOfSatellites // instance variable out of if loop is EXTREMELY NECESSARY
     if (this.state.satellites.length > 0) {
-      satellites = (
+      let SatelliteList = this.state.satellites.map((n,index) => <li key={index}>{n['name']}</li>)
+      ListOfSatellites = (
         <Fragment>
           <h4>Satellites :</h4>
-          <ul>{this.satelliteList}</ul>
+          <ul>{SatelliteList}</ul>
         </Fragment>
       )
+      // console.log(`${this.state.satellites.length} satélites em ${this.props.name}`)
     } else {
-      satellites = null
+      ListOfSatellites = null
+      // console.log(`Zero satélites em ${this.props.name}`)
     }
-
     return (
       <div onClick={this.props.theClick}>
         <h2>{this.props.name}</h2>
@@ -56,6 +58,7 @@ class Planet extends React.Component {
           alt={this.props.name}
           className={this.props.grey ? 'grey-img' : 'norm-img'}
         ></img>
+        {ListOfSatellites}
         <br />
       </div>
     )
