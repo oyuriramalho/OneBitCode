@@ -1,6 +1,5 @@
-import logo from './logo.svg'
-import './App.css'
-import Love from './love'
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
@@ -18,10 +17,9 @@ function App() {
         >
           Learn React
         </a>
-        <Love></Love>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
