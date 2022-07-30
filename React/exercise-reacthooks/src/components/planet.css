@@ -1,0 +1,13 @@
+:root {
+  --tam : 25%;
+}
+
+.grey-img{
+  height: var(--tam);
+  width: var(--tam)
+}
+
+.norm-img{
+  height: var(--tam);
+  width: var(--tam)
+}

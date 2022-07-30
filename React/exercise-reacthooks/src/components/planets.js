@@ -7,7 +7,7 @@ async function getPlanets(url) {
   return data
 }
 
-const clockOnPlanet = name => {
+const clickOnPlanet = name => {
   alert(`Um clique no planeta ${name}`)
 }
 
@@ -36,6 +36,7 @@ const Planets = () => {
       satellitesUrl: null
     }
   ])
+  setPlanets(getPlanets('ttp://localhost:3000/api/planet_list.json'))
 
   return (
     <Fragment>
