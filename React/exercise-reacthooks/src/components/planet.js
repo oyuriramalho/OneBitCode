@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import './planet.css'
 
 async function getSatellites(X) {
@@ -9,16 +9,22 @@ async function getSatellites(X) {
 }
 
 function Planet(props) {
+  const [satellitesList, setSatellites] = useState([])
   // [state, setStateMethod] = useState(inicialState)
-  const [satellitesList, setSatellites] = useState(null)
+  useEffect(() => {
+    getSatellites(props.satellitesUrl).then(data => {
+      setSatellites(data.satellites)
+    })
+  }, [])
+
   let ListOfSatellites
-  if (props.satellitesUrl != satellitesList) {
+  if (props.satellitesUrl !== null && satellitesList.length != 0) {
     ListOfSatellites = (
       <Fragment>
         <h4>Satellites of {props.name}:</h4>
         <ul>
-          {getSatellites(props.satellitesUrl).map((n, index) => (
-            <li key={index}>{n['name']}</li>
+          {satellitesList.map(data => (
+            <li>{data.name}</li>
           ))}
         </ul>
       </Fragment>
@@ -26,23 +32,26 @@ function Planet(props) {
   } else {
     ListOfSatellites = null
   }
+
+  return (
+    <Fragment>
+      <h2>Planeta {props.name}</h2>
+      <p>{props.description}</p>
+      <p>
+        <a href={props.links} target="_blank" rel="noopener noreferrer">
+          Saiba mais
+        </a>
+      </p>
+      <img
+        src={props.planetImg}
+        alt={props.name}
+        className={props.grey ? 'grey-img' : 'norm-img'}
+        onClick={() => props.theClick()}
+      ></img>
+      {ListOfSatellites}
+      <br />
+    </Fragment>
+  )
 }
 
-return (
-  <Fragment>
-    <h2>Planeta {props.name}</h2>
-    <p>{props.description}</p>
-    <p>
-      <a href={props.links} target="_blank" rel="noopener noreferrer">
-        Saiba mais
-      </a>
-    </p>
-    <img
-      src={props.planetImg}
-      alt={props.name}
-      className={props.grey ? 'grey-img' : 'norm-img'}
-    ></img>
-    {ListOfSatellites}
-    <br />
-  </Fragment>
-)
+export default Planet

@@ -1,26 +1,14 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import Planet from './planet.js'
 
-async function getPlanets(url) {
-  let response = await fetch(url)
+async function getPlanets() {
+  let response = await fetch('http://localhost:3000/api/planet_list.json')
   let data = await response.json()
   return data
 }
 
 const clickOnPlanet = name => {
   alert(`Um clique no planeta ${name}`)
-}
-
-const removeLast = () => {
-  let new_planets = [...planets]
-  new_planets.pop()
-  setPlanets(new_planets)
-}
-
-const duplicateLast = () => {
-  let new_planets = [...planets]
-  let lastPlanet = planets[planets.length - 1]
-  setPlanets([...planets, lastPlanet])
 }
 
 const Planets = () => {
@@ -36,14 +24,32 @@ const Planets = () => {
       satellitesUrl: null
     }
   ])
-  setPlanets(getPlanets('ttp://localhost:3000/api/planet_list.json'))
+
+  // const removeLast = () => {
+  //   let new_planets = [...planets]
+  //   new_planets.pop()
+  //   setPlanets(new_planets)
+  // }
+
+  // const duplicateLast = () => {
+  //   let new_planets = [...planets]
+  //   let lastPlanet = planets[planets.length - 1]
+  //   setPlanets([...planets, lastPlanet])
+  // }
+
+  useEffect(() => {
+    getPlanets().then(data => {
+      setPlanets(data.planets)
+    })
+  },[])
+  //setPlanets(setPlanets('http://localhost:3000/api/planet_list.json'),[])
 
   return (
     <Fragment>
       <h1>Planet List</h1>
       <br />
-      <button onClick={duplicateLast}>Duplicate last</button>
-      <button onclick={removeLast}>Delete last</button>
+      {/* <button onClick={duplicateLast}>Duplicate last</button>
+      <button onclick={removeLast}>Delete last</button> */}
       <hr />
       {planets.map((planet, index) => (
         <Planet
