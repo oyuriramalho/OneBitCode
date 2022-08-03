@@ -1,5 +1,6 @@
 import { Fragment, useState, useEffect } from 'react'
 import './planet.css'
+import SatelliteForm from '../shared/new-satellite-form.js'
 
 async function getSatellites(X) {
   //X is the link for satellites's JSON data
@@ -17,20 +18,29 @@ function Planet(props) {
     })
   }, [])
 
+  // Considering if we have an API response with satelite list
   let ListOfSatellites
-  if (props.satellitesUrl !== null && satellitesList.length != 0) {
+  if (satellitesList.length != 0) {
     ListOfSatellites = (
       <Fragment>
         <h4>Satellites of {props.name}:</h4>
         <ul>
-          {satellitesList.map(data => (
-            <li>{data.name}</li>
+          {satellitesList.map((data, index) => (
+            <li key={index}>{data.name}</li>
           ))}
         </ul>
       </Fragment>
     )
   } else {
-    ListOfSatellites = null
+    ListOfSatellites = <h4>No satellites</h4>
+  }
+  // Add new satellite on Planet method for new-satellite-form components
+  const addSatellite = new_satellite => {
+    if (satellitesList.length != 0) {
+      setSatellites([...satellitesList, new_satellite])
+    } else {
+      setSatellites([new_satellite])
+    }
   }
 
   return (
@@ -48,7 +58,10 @@ function Planet(props) {
         className={props.grey ? 'grey-img' : 'norm-img'}
         onClick={() => props.theClick()}
       ></img>
+      <SatelliteForm addSatellite={addSatellite} />
       {ListOfSatellites}
+      {console.log(`\n\nSatellite List of ${props.name}:`)}
+      {console.log(satellitesList)}
       <br />
     </Fragment>
   )

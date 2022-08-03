@@ -25,17 +25,17 @@ const Planets = () => {
     }
   ])
 
-  // const removeLast = () => {
-  //   let new_planets = [...planets]
-  //   new_planets.pop()
-  //   setPlanets(new_planets)
-  // }
+  const removeLast = () => {
+    let new_planets = [...planets]
+    new_planets.pop()
+    setPlanets(new_planets)
+  }
 
-  // const duplicateLast = () => {
-  //   let new_planets = [...planets]
-  //   let lastPlanet = planets[planets.length - 1]
-  //   setPlanets([...planets, lastPlanet])
-  // }
+  const duplicateLast = () => {
+    let new_planets = [...planets]
+    let lastPlanet = planets[planets.length - 1]
+    setPlanets([...planets, lastPlanet])
+  }
 
   useEffect(() => {
     getPlanets().then(data => {
@@ -48,8 +48,10 @@ const Planets = () => {
     <Fragment>
       <h1>Planet List</h1>
       <br />
-      {/* <button onClick={duplicateLast}>Duplicate last</button>
-      <button onclick={removeLast}>Delete last</button> */}
+      <button onClick={duplicateLast}>Duplicate last</button>
+      <button onClick={removeLast}>Delete last</button>
+      <br/>
+      
       <hr />
       {planets.map((planet, index) => (
         <Planet
