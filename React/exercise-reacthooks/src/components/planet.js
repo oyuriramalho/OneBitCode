@@ -20,7 +20,7 @@ function Planet(props) {
 
   // Considering if we have an API response with satelite list
   let ListOfSatellites
-  if (satellitesList.length != 0) {
+  if (satellitesList.length !== 0) {
     ListOfSatellites = (
       <Fragment>
         <h4>Satellites of {props.name}:</h4>
@@ -36,7 +36,7 @@ function Planet(props) {
   }
   // Add new satellite on Planet method for new-satellite-form components
   const addSatellite = new_satellite => {
-    if (satellitesList.length != 0) {
+    if (satellitesList.length !== 0) {
       setSatellites([...satellitesList, new_satellite])
     } else {
       setSatellites([new_satellite])
@@ -60,8 +60,6 @@ function Planet(props) {
       ></img>
       <SatelliteForm addSatellite={addSatellite} />
       {ListOfSatellites}
-      {console.log(`\n\nSatellite List of ${props.name}:`)}
-      {console.log(satellitesList)}
       <br />
     </Fragment>
   )
