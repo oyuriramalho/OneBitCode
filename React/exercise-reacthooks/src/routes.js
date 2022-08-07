@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import PlanetsScreen from './screens/planets-screen'
 
-const Rotas = () => (
+const AppRoutes = () => (
   <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<PlanetsScreen />} />
@@ -10,4 +10,4 @@ const Rotas = () => (
   </BrowserRouter>
 )
 
-export default Rotas
+export default AppRoutes

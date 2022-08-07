@@ -1,13 +1,14 @@
-import Rotas from './routes.js'
+import React from 'react'
+import AppRoutes from './routes'
+//import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-// import Planets from './components/planets'
 //import PlanetsScreen from './screens/planets-screen'
 
 function App() {
   return (
     <div className="App">
-      <Rotas />
-      {/* <Planets /> */}
+      {/* <PlanetsScreen /> */}
+      <AppRoutes/>
     </div>
   )
 }
