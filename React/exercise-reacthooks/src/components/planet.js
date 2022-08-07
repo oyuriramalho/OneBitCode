@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect } from 'react'
 import './planet.css'
-import SatelliteForm from '../shared/new-satellite-form.js'
+import SatelliteForm from '../shared/new-satellite-form'
 
 async function getSatellites(X) {
   //X is the link for satellites's JSON data
