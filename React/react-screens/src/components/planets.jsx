@@ -1,4 +1,5 @@
 import Planet from './planet.jsx'
+import AddPlanetForm from '../forms/add-planet-form.jsx'
 import { Fragment, useState, useEffect} from 'react'
 
 // Getting information from JSON
@@ -31,6 +32,8 @@ const Planets = () => {
   return (
     <Fragment>
       <h1>Planet List</h1>
+      <hr/>
+      {<AddPlanetForm/>}
       <hr />
       {planets.map((planet, index) => (
         <Planet
@@ -40,7 +43,7 @@ const Planets = () => {
           links={planet.links}
           // theClick={() => clickOnPlanet(planet.name)}
           grey={false}
-          showSatellites={true}
+          showSatellites={false}
           satelliteList={planet.satelliteList}
           key={index}
         />
