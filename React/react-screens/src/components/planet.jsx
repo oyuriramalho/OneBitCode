@@ -1,16 +1,32 @@
-import { Fragment} from 'react'
+import { Fragment,useState, useEffect} from 'react'
+import AddSatelliteForm from '../forms/add-satellite-form'
 
 function Planet(props) {
+  const [satellitesList, setSatellites] = useState(props.satelliteList)
+
+  const addSatellite = (newSatellite) =>{
+    setSatellites([...satellitesList, newSatellite])
+  }
+
+  useEffect(() => {
+      setSatellites(props.satelliteList)
+    }
+  , [])
+
   let satellites
+  // Estou no componente Planet ?
   if (props.showSatellites) {
-    if (props.satelliteList.length === 0) {
+    // Se lista vazia
+    if (satellitesList.length === 0) {
       satellites = <h4>No satellites</h4>
-    } else if (props.satelliteList.length > 0) {
+      // Se há satélites listados
+    } else if (satellitesList.length > 0) {
       satellites = (
         <Fragment>
+          <AddSatelliteForm addSatellite={addSatellite}/>
           <h3>{`Satellites of ${props.name}:\n`}</h3>
           <ul>
-            {props.satelliteList.map((moon, index) => (
+            {satellitesList.map((moon, index) => (
               <li key={index}>{moon}</li>
             ))}
           </ul>
@@ -18,6 +34,7 @@ function Planet(props) {
       )
     }
   } else {
+    // Se estou no componente Planets
     satellites = null
   }
 
@@ -27,7 +44,7 @@ function Planet(props) {
       <p>{props.description}</p>
       <img src={props.planetImg} alt={`Imagem do planeta ${props.name}`} />
       {satellites}
-      <br/>
+      <br />
     </Fragment>
   )
 }

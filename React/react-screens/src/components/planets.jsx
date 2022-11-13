@@ -43,7 +43,7 @@ const Planets = () => {
           links={planet.links}
           // theClick={() => clickOnPlanet(planet.name)}
           grey={false}
-          showSatellites={false}
+          showSatellites={true}
           satelliteList={planet.satelliteList}
           key={index}
         />
