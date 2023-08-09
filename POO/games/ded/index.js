@@ -1,3 +1,5 @@
+// Common JS
+
 const Mage = require('./Mage.js')
 const Thief = require('./Thief.js')
 const Warrior = require('./Warrior.js')

@@ -1,3 +1,5 @@
+// CommonJS
+
 module.exports = class Char {
   constructor(name, atk, def, life) {
     this.name = name
